@@ -1,0 +1,12 @@
+<!--discover.wxml-->
+<loading hidden="{{loadingHidden}}">
+        加载中...
+</loading>
+
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{focusImages.list}}" wx:key="{{item}}">
+        <swiper-item>
+            <image src="{{item.pic}}" style="width:100%; height:100%;"></image>
+        </swiper-item>
+    </block>
+</swiper>

@@ -1,0 +1,22 @@
+<!--profile.wxml-->
+<view class="container">
+
+  <view class="avatar">
+    <image src="{{ avatar }}" />
+  </view>
+  <view class="name">{{ name }}</view>
+
+  <view class="item" data-target="user" bindtap="navTo">
+    <text>作品夹</text>
+    <text>→</text>
+  </view>
+  <view class="item" data-target="setting" bindtap="navTo">
+    <text>喜欢与收藏</text>
+    <text>→</text>
+  </view>
+  <view class="item" data-target="setting" bindtap="navTo">
+    <text>关于</text>
+    <text>→</text>
+  </view>
+
+</view>
