@@ -1,5 +1,17 @@
 /*index.wxss*/ 
 
+/*searchbar搜索栏*/ 
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+
 /*banner图标设置充满容器*/
 .pic{
   width:100%

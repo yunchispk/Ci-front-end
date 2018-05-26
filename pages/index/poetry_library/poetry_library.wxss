@@ -1,0 +1,4 @@
+/*pages/index/poetry_library/poetry_library.wxss*/ 
+.item{
+  margin: 25rpx 0rpx 25rpx 0rpx;
+}

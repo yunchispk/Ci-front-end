@@ -2,9 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/discover/discover",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/index/poetry_library/poetry_library",
+    "pages/index/poetry_article/poetry_article",
+    "pages/index/write/write"
   ],
-
   "window": {
     "navigationBarBackgroundColor": "#7acfa6",
     "navigationBarTextStyle": "white",
@@ -12,7 +14,6 @@
     "backgroundColor": "#7acfa6",
     "backgroundTextStyle": "light"
   },
-
   "tabBar": {
     "color": "#7f848a",
     "selectedColor": "#7acfa6",
@@ -37,5 +38,12 @@
         "selectedIconPath": "images/index/icon_tabbar_myup@active.png"
       }
     ]
-  }
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
 }

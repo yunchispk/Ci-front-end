@@ -1,0 +1,5 @@
+<!--pages/index/poetry_article/poetry_article.wxml-->
+<view class="page">
+  <view class="title">{{article.title}}</view>
+  <view class="content">{{article.content}}</view>
+</view>

@@ -1,0 +1,8 @@
+/*pages/index/poetry_article/poetry_article.wxss*/ 
+.title{
+  text-align: center;
+  background-color:lightblue;
+  font-size: 50rpx;
+  padding: 50rpx; 
+  margin-bottom: 50rpx;
+}
