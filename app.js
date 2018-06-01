@@ -37,5 +37,6 @@ App({
   globalData: {
     userInfo: null,
     code: null
-  }
+  },
+  _server: 'https://www.ikjmls.cn',
 })

@@ -1,5 +1,15 @@
 <!--pages/index/poetry_article/poetry_article.wxml-->
 <view class="page">
-  <view class="title">{{article.title}}</view>
-  <view class="content">{{article.content}}</view>
+  <view class="title">
+    <text>词名：{{poetry_article.title}}</text>
+  </view>
+  <view class="poet">
+    <text>词人：{{poetry_article.poet}}</text>
+  </view>
+  <view class="content">
+    <text>正文：{{poetry_article.contene}}</text>
+  </view>
+  <view class="note">
+    <text>注释：{{poetry_article.note}}</text>
+  </view>
 </view>
