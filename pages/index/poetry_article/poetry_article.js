@@ -7,7 +7,8 @@ Page({
       author: '',         //词人
       paragraphs: {},     //词正文
       //note: '',           //注释
-      class_like:'button'
+      class_like:'button',
+      canItap: true
   },
 
   onLoad: function (options) {
@@ -17,24 +18,22 @@ Page({
     this.getData();
   },
   like: function(){
-    console.log(app.globalData.openid)
-    if (app.globalData.openid != null){
+    if (this.data.canItap == true && app.globalData.get_user == true){
       this.setData({
         class_like: "red_button",
+        canItap: false
       })
-    }
     const that = this;
     wx:wx.request({
-      url: 'https://www.ikjmls.cn/user/' + openid + '/poetry/' + that.data.sn,
-      data: '',
-      header: {},
-      method: 'GET',
-      dataType: 'json',
-      responseType: 'text',
-      success: function(res) {},
+      url: 'https://www.ikjmls.cn/user/' + app.globalData.openid + '/poetry/' + that.data.sn,
+      success: function(res) {
+        app.globalData.looked = app.globalData.looked + that.data.sn + ','
+        console.log(app.globalData.looked)
+      },
       fail: function(res) {},
       complete: function(res) {},
     })
+    }
   },
   //获取词详情 
   getData: function () {
@@ -71,6 +70,7 @@ Page({
           author: res.data.data[0].author,
           sn: res.data.data[0].sn,
           class_like: "button",
+          canItap:true
         })
       },
       fail: function (res) {

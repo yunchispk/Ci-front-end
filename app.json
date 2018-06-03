@@ -5,7 +5,11 @@
     "pages/profile/profile",
     "pages/index/poetry_library/poetry_library",
     "pages/index/poetry_article/poetry_article",
-    "pages/index/write/write"
+    "pages/index/poetry_rhythmicpoetry_rhythmic",
+    "pages/index/poetry_library_rule/poetry_library_rule",
+    "pages/index/poetry_library_rule/write/write",
+    "pages/profile/liked/liked",
+    "pages/profile/finished/finished"
   ],
   "window": {
     "navigationBarBackgroundColor": "#7acfa6",

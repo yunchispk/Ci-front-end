@@ -4,9 +4,40 @@ const app = getApp()
 
 Page({
   data: {
-    rule: "中仄仄平平，中仄平平。中平中仄仄平平。中仄中平平仄仄，中仄平平。中仄仄平平，中仄平平，中平中仄仄平平。中仄中平平仄仄，中仄平平。",
     focus:false,
-    input_value:''
+    input_value:'',
+    canItap: true,
+    class_like: 'button'
+  },
+  onLoad: function(options){
+    const that = this
+    var sn = Math.floor(Math.random() * 16)
+    wx.request({
+      url: 'https://www.ikjmls.cn/image/bg' + sn,
+      success: function (res) {
+        var data = res.data
+        var array = wx.base64ToArrayBuffer(res.data)
+        var base64 = wx.arrayBufferToBase64(array)
+        if (res.statusCode == 200) {
+          that.setData({
+            imageData: 'data:image/jpeg;base64,' + base64,  // data 为接口返回的base64字符串  
+          })
+        }
+      }
+    })
+    var keyword = options.keyword;
+    wx:wx.request({
+      url: 'https://www.ikjmls.cn/the_rhythmic_rule/' + keyword,
+      success: function(res) {
+        that.setData({
+          rhythmic: res.data.data[0].rhythmic,
+          rule: res.data.data[0].rule
+        })
+        that.refresh()
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
   bindButtonTap: function (e) {
     var value = e.detail.value
@@ -76,7 +107,9 @@ Page({
         }
         console.log(pz_list)
         that.setData({
-          pz_list: pz_list
+          pz_list: pz_list,
+          canItap: true,
+          class_like: "button",
         })
       },
       fail: function(res) {},
@@ -87,8 +120,53 @@ Page({
     },
       () => {
         console.log('赋值成功')})
+  }, 
+  save: function(){
+    if (this.data.canItap == true && app.globalData.get_user == true) {
+      this.setData({
+        class_like: "green_button",
+        canItap: false
+      })
+      const that = this
+      if (this.data.sn == null){
+        var str_write = ""
+        console.log(that.data.list_write)
+        console.log(that.data.list_write.length)
+        for (var i = 0; i < that.data.hang; i++){
+          console.log(str_write)
+          str_write = str_write + that.data.list_write[i].join("") + "。"
+        }
+        var url = 'https://www.ikjmls.cn/user/' + app.globalData.openid + '/user_name/' + app.globalData.userInfo.nickName + '/iscreating/' + str_write + '/rhythmic/' + that.data.rhythmic
+        console.log(url)
+      wx:wx.request({
+        url: url,
+        success: function(res) {
+          that.setData({
+            sn: res.data.sn
+          })
+        },
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+      }else{
+        var str_write = ""
+        for (var i = 0; i < that.data.hang; i++) {
+          str_write = str_write + that.data.list_write[i].join("") + "。"
+        }
+        var url = 'https://www.ikjmls.cn/user/' + app.globalData.openid + '/user_name/' + app.globalData.userInfo.nickName + '/iscreating/' + str_write + '/rhythmic/' + that.data.rhythmic + '/sn/' + that.data.sn
+        console.log(url)
+        wx: wx.request({
+          url: url,
+          success: function (res) {
+          },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      }
+
+    }
   },
-  onShow: function () {
+  refresh: function () {
     var list1 = {};
     var list2 = {};
     var pz_list = {};
@@ -99,11 +177,13 @@ Page({
       pz_list[i] = {}
     }
     list2[0] = 1
+    var hang = rule_list.length - 1
     this.setData({
       list: list1,
       pz_list: pz_list,
       list_write: list1,
-      list_input: list2
+      list_input: list2,
+      hang: hang
     })
   }
 })

@@ -58,9 +58,11 @@ Page({
       }
     }
   },
-  bindKeyTap:function(e){
+  next: function (e) {
+    var keyword = e.currentTarget.dataset.keyword;
+    console.log(keyword)
     wx.navigateTo({
-      url: '../index/poetry_rhythmicpoetry_rhythmic',
+      url: 'write/write?keyword=' + keyword,
     })
-  }
+  }  
 })

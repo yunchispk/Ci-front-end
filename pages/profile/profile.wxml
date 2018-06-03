@@ -13,11 +13,11 @@
     </view>
 <view class="page_bd">
   <view class="weui-cells weui-cells_after-title">
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="../profile/finished/finished" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__bd">作品夹</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="../profile/liked/liked" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__bd">喜欢与收藏</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>

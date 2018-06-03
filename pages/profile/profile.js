@@ -3,7 +3,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: '（只有登陆才可以查看创作和收藏的作品）',
+    motto: '（只有登陆才可以查看创作和收藏的作品哦）',
     code: null,
     userInfo: {},
     hasUserInfo: false,
@@ -16,115 +16,12 @@ Page({
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
+    console.log(app.globalData.openid)
+    if (app.globalData.get_user) {
+      console.log(app.globalData.get_user)
       this.setData({
-        code:app.globalData.code,
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
-      })
-      console.log(app.globalData.userInfo)
-      const that = this
-      wx: wx.request({
-        url: 'https://www.ikjmls.cn/code/' + app.globalData.code,
-        success: function (res) {
-          console.log(res)
-          app.globalData.openid = res.data.openid
-          that.setData({
-            openid: res.data.openid
-          })
-        },
-        fail: function (res) { },
-        complete: function (res) { },
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      wx.login({
-        success: res => {
-          this.setData({ code: res.code })
-          console.log(this.data.code)
-          const that = this
-          wx:wx.request({
-            url: 'https://www.ikjmls.cn/code/' + that.data.code,
-            success: function(res) {
-              console.log(res)
-              app.globalData.openid = res.data.openid
-              that.setData({
-                openid: res.data.openid
-              })
-            },
-            fail: function(res) {},
-            complete: function(res) {},
-          })
-          // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        }
-      })
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          code: app.globalData.code,
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-        console.log(app.globalData.userInfo)
-        const that = this
-        wx: wx.request({
-          url: 'https://www.ikjmls.cn/code/' + app.globalData.code,
-          success: function (res) {
-            console.log(res)
-            app.globalData.openid = res.data.openid
-            that.setData({
-              openid: res.data.openid
-            })
-          },
-          fail: function (res) { },
-          complete: function (res) { },
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.login({
-        success: res => {
-          this.setData({ code: res.code })
-          console.log(this.data.code)
-          const that = this
-          wx: wx.request({
-            url: 'https://www.ikjmls.cn/code/' + that.data.code,
-            success: function (res) {
-              console.log(res)
-              app.globalData.openid = res.data.openid
-              that.setData({
-                openid: res.data.openid
-              })
-            },
-            fail: function (res) { },
-            complete: function (res) { },
-          })
-          // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        }
-      })
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            code: res.code,
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-          console.log(this.data.code)
-          const that = this
-          wx: wx.request({
-            url: 'https://www.ikjmls.cn/code/' + that.data.code,
-            success: function (res) {
-              console.log(res)
-              app.globalData.openid = res.data.openid
-              that.setData({
-                openid: res.data.openid
-              })
-            },
-            fail: function (res) { },
-            complete: function (res) { },
-          })
-        }
       })
     }
   },
@@ -139,14 +36,26 @@ Page({
           success: function (res) {
             console.log(res)
             app.globalData.openid = res.data.openid
-            that.setData({
-              openid: res.data.openid
+            wx: wx.request({
+              url: 'https://www.ikjmls.cn/user/' + app.globalData.openid + '/name/' + app.globalData.userInfo.nickName,
+              success: function (res) {
+                console.log(res.data)
+                console.log(res.data.data)
+                console.log(res.data.data[0])
+                console.log(res.data.data[0].looked)
+                app.globalData.get_user = true;
+                app.globalData.looked = res.data.data[0].looked
+                app.globalData.is_creating = res.data.data[0].is_creating
+                app.globalData.finished = res.data.data[0].finished
+                console(app.glbalData.looked)
+              },
+              fail: function (res) { },
+              complete: function (res) { },
             })
           },
           fail: function (res) { },
           complete: function (res) { },
         })
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
     console.log(e)

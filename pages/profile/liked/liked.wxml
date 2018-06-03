@@ -1,0 +1,10 @@
+<!--pages/profile/liked/liked.wxml-->
+<swiper class="swiper" previous-margin="80rpx" next-margin="80rpx">
+  <swiper-item wx:for="{{results}}" wx:for-item="item" wx:for-index="index">
+  <view class="card">
+    <text>{{item.rhythmic}}</text>
+    <text>{{item.author}}</text>
+    <text>{{item.paragraphs}}</text>
+  </view>
+  </swiper-item>
+</swiper>
