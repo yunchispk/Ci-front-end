@@ -1,5 +1,6 @@
 //app.js
 App({
+  version: 'v0.0.0', //版本号
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -22,7 +23,16 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
+              const that = this
+              wx: wx.request({
+                url: 'https://www.ikjmls.cn/code/' + res.code,
+                success: function (res) {
+                  console.log(res)
+                  that.globalData.openid = res.data.openid
+                },
+                fail: function (res) { },
+                complete: function (res) { },
+              })
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -36,7 +46,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    code: null
+    code: null,
+    openid: null
   },
   _server: 'https://www.ikjmls.cn',
 })

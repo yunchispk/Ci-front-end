@@ -9,8 +9,9 @@
   <view class="content" wx:for="{{paragraphs}}" wx:for-item="i">
     <text>{{i}}</text>
   </view>
-  <view>
-  <button class="button" bindtap="more">再来一个~</button>
-  <button class="{{class_like}}" bindtap="like">我好喜欢！</button>
+  <!--
+  <view class="note">
+    <text>注释：{{poetry_article.note}}</text>
   </view>
+  -->
 </view>

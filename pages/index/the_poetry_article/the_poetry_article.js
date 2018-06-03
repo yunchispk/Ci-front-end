@@ -7,40 +7,17 @@ Page({
       author: '',         //词人
       paragraphs: {},     //词正文
       //note: '',           //注释
-      class_like:'button'
   },
 
   onLoad: function (options) {
     this.getData();
   },
-  more: function(){
-    this.getData();
-  },
-  like: function(){
-    console.log(app.globalData.openid)
-    if (app.globalData.openid != null){
-      this.setData({
-        class_like: "red_button",
-      })
-    }
-    const that = this;
-    wx:wx.request({
-      url: 'https://www.ikjmls.cn/user/' + openid + '/poetry/' + that.data.sn,
-      data: '',
-      header: {},
-      method: 'GET',
-      dataType: 'json',
-      responseType: 'text',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
-  },
+
   //获取词详情 
   getData: function () {
     const that = this
     var id = Math.floor(Math.random() * 21000);
-    var sn = Math.floor(Math.random() * 16)
+    var sn = Math.floor(Math.random() * 10)
     wx.request({
       url: 'https://www.ikjmls.cn/image/bg' + sn,
       success: function (res) {
@@ -61,16 +38,11 @@ Page({
         //console.log('22222')
         console.log(res.data)
         var paragraphs_list = res.data.data[0].paragraphs.split('\', \'')
-        for(var i = 0; i < paragraphs_list.length; i++){
-          paragraphs_list[i] = paragraphs_list[i].substr(0, paragraphs_list[i].length-1)
-        }
-        console.log(paragraphs_list)
         that.setData({
           rhythmic: res.data.data[0].rhythmic,
           paragraphs: paragraphs_list,
           author: res.data.data[0].author,
-          sn: res.data.data[0].sn,
-          class_like: "button",
+          sn: sn
         })
       },
       fail: function (res) {

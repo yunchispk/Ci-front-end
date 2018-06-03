@@ -1,1 +1,28 @@
-<!--pages/index/write/write.wxml-->
+<view class="section">
+    <view style="height: 750rpx">
+      <view class="flex-wrp" wx:for="{{list}}" wx:for-item="i" wx:for-index="x1">
+        <view class = "back{{list_input[x1]}} flex-item bc_green" wx:for="{{i}}"  wx:for-item="j" wx:for-index="x2" bindtap="bindButtonTap" data-id="{{x1}}">
+          <view wx:if="{{list_write[x1][x2] != j}}">
+          <text class="pzback{{pz_list[x1][x2]}}">{{list_write[x1][x2]}}</text>
+          </view>
+          <view wx:else>
+            <view wx:if="{{j == '中'}}">
+            <text class="pzback">{{j}}</text>
+            </view>
+            <view wx:elif="{{j == '平'}}">
+            <text class="pzback">{{j}}</text>
+            </view>
+            <view wx:elif="{{j == '仄'}}">
+            <text class="pzback">{{j}}</text>
+            </view>
+            <view wx:else>
+            <text class="pzback">{{j}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="section">
+    <input bindinput="bindKeyInput" placeholder="请输入~" focus="{{focus}}" value="{{input_value}}"/>
+    </view>
+</view>
