@@ -2,10 +2,9 @@
         加载中...
 </loading>
 <view class="all bj" style="background-image: url('{{imageData}}');">
-
       <view class="title flex-wrp">{{rhythmic}}</view>
-      <view class="flex-wrp" wx:for="{{list}}" wx:for-item="i" wx:for-index="x1">
-        <view class = "back back{{list_input[x1]}} flex-item bc_green" wx:for="{{i}}"  wx:for-item="j" wx:for-index="x2" bindtap="bindButtonTap" data-id="{{x1}}">
+      <view class="back{{list_input[x1]}} flex-wrp" wx:for="{{list}}" wx:for-item="i" wx:for-index="x1">
+        <view class = "flex-item bc_green" wx:for="{{i}}"  wx:for-item="j" wx:for-index="x2" bindtap="bindButtonTap" data-id="{{x1}}">
           <view wx:if="{{list_write[x1][x2] != j}}">
           <text class="pzback{{pz_list[x1][x2]}} content">{{list_write[x1][x2]}}</text>
           </view>
@@ -29,4 +28,9 @@
     <input class="inputView" bindinput="bindKeyInput" placeholder="  请输入~" focus="{{focus}}" value="{{input_value}}"/>
     </view>
     <button class="{{class_like}}" catchtap='save'>保存！</button>
+    <button wx:if="{{open_ok}}" class="button" catchtap='open'>公开！</button>
+    <button wx:else class="button" catchtap='disopen'>隐藏！</button>
+    <modal hidden="{{hidden}}" title="确定要公开吗？" confirm-text="公开" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    公开后将会被陌生人看到哦！
+</modal>
 </view>

@@ -1,6 +1,4 @@
 <!--pages/index/poetry_article/poetry_article.wxml-->
-<modal hidden="{{fx}}"  no-cancel="true" title="喜欢的话分享给好友吧" confirm-text="知道啦！" bindconfirm="fx">点击右上角分享哦
-</modal>
 <view class="all" style="background-image: url('{{imageData}}');">
 <scroll-view scroll-y="true" style="height: 500px; width: 350prx">
   <view class="article">
@@ -16,7 +14,6 @@
   </view>
   </scroll-view>
   <view>
-  <button class="button" bindtap="more">再来一个~</button>
   <button class="{{class_like}}" bindtap="like">我好喜欢！</button>
   </view>
 </view>

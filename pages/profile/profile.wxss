@@ -6,9 +6,11 @@
   margin-top: 60rpx;
 }
 .userinfo {
+  font-size: 60rpx;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items:center;
 }
 
 .userinfo-avatar {
@@ -19,9 +21,19 @@
 }
 
 .userinfo-nickname {
+  font-size: 40rpx;
   color: #aaa;
 }
 
 .usermotto {
   margin-top: 200px;
 }
+
+.clickEncryptBtn{  
+  border-radius: 3px;  
+  margin:40px auto;  
+  padding-top:2px;  
+  font-size:14px;  
+  color:#aaa;  
+  overflow:hidden;  
+}  

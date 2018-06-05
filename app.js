@@ -17,6 +17,9 @@ App({
           success: function (res) {
             console.log(res)
             that.globalData.openid = res.data.openid
+            that.globalData.ok = res.data.ok
+            that.globalData.name = res.data.name
+            that.globalData.like_tosat = res.data.ok
             console.log(that.globalData.openid)
           },
           fail: function (res) { },
@@ -32,13 +35,8 @@ App({
               }
   },
   globalData: {
-    userInfo: null,
-    code: null,
-    openid: null,
-    looked: '',
-    is_creating: '',
-    finished: '',
-    get_user: false
+    get_user: false,
+    fxts : true,
   },
   _server: 'https://www.ikjmls.cn',
 })

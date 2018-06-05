@@ -8,24 +8,13 @@ Page({
       paragraphs: {},     //词正文
       //note: '',           //注释
       class_like:'button',
-      canItap: true,
-      fx: true
+      canItap: true
   },
 
   onLoad: function (options) {
-    if (app.globalData.fxts == true) {
-      app.globalData.fxts = false
-      this.setData({
-        fx: false
-      })
-    } else {
-      this.setData({
-        fx: true
-      })
-    }
-    this.getData();
-  },
-  more: function(){
+    this.setData({
+      sn: options.id
+    })
     this.getData();
   },
   like: function(){
@@ -44,27 +33,11 @@ Page({
       fail: function(res) {},
       complete: function(res) {},
     })
-    if (app.globalData.like_tosat == '0'){
-      app.globalData.like_tosat == '1'
-      wx: wx.showModal({
-        title: '提示',
-        content: '我喜欢的可以在收藏夹查看哦',
-        showCancel: false,
-        cancelText: '',
-        cancelColor: '',
-        confirmText: '辛苦啦',
-        confirmColor: '',
-        success: function (res) { },
-        fail: function (res) { },
-        complete: function (res) { },
-      })
-    }
     }
   },
   //获取词详情 
   getData: function () {
     const that = this
-    var id = Math.floor(Math.random() * 21000);
     wx.request({
       url: 'https://www.ikjmls.cn/image/bg2',
       success: function (res) {
@@ -80,7 +53,7 @@ Page({
     })
     //wx.showNavigationBarLoading();
     wx.request({
-      url: app._server + '/poetry/' + id,
+      url: app._server + '/poetry/' + that.data.sn,
       success: function (res) {
         //console.log('22222')
         console.log(res.data)
@@ -93,7 +66,6 @@ Page({
           rhythmic: res.data.data[0].rhythmic,
           paragraphs: paragraphs_list,
           author: res.data.data[0].author,
-          sn: res.data.data[0].sn,
           class_like: "button",
           canItap:true
         })
@@ -113,18 +85,13 @@ Page({
 /**
  * 用户点击右上角分享
  */
-  fx: function () {
-    this.setData({
-      fx: true
-    })
-  },
-onShareAppMessage: function () {
-  return {
-    title: app.globalData.name + "的分享！",
-    desc: "看看" + app.globalData.name + "给你分享了什么吧~",
-    path: '/pages/share/share?poetry_id=' + this.data.sn
+  onShareAppMessage: function () {
+    return {
+      title: app.globalData.name + "的分享！",
+      desc: "看看" + app.globalData.name + "给你分享了什么吧~",
+      path: '/pages/share/share?poetry_id=' + this.data.sn
+    }
   }
-}
 
 })
 

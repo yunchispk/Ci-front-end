@@ -1,14 +1,12 @@
 <!--profile.wxml-->
 <!--index.wxml-->
+<modal hidden="{{hidden}}" no-cancel="true" title="换一个响亮的笔名！" confirm-text="就它了！" bindconfirm="rename">
+<input type="text" class="weui-search-bar__input" placeholder="之前作品的笔名仍会保留哦" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+</modal>
 <view class="container2">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登陆 
-    </button>
-    <text wx:if="{{!hasUserInfo && canIUse}}" class="user-motto">{{motto}}</text>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view>{{name}}</view>
+    <button class="clickEncryptBtn" bindtap="toast"> 重命名</button>
   </view>
     </view>
 <view class="page_bd">
@@ -21,7 +19,7 @@
       <view class="weui-cell__bd">喜欢与收藏</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" catchtap='info'>
       <view class="weui-cell__bd">关于</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>

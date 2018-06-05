@@ -1,13 +1,6 @@
 /*pages/index/poetry_article/poetry_article.wxss*/
-.title {
-  text-align: center;
-  font-size: 50rpx;
-  padding: 20rpx;
-  margin-bottom: 20rpx;
-  background-size: contain;
-}
 .all{
-    justify-content: center;
+  justify-content: center;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -16,16 +9,31 @@
   align-items: center;
 
 }
+.title {
+  font-size: 50rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  font-family: "宋体"
+}
+.button{
+  opacity:0.6
+}
+.red_button{
+  opacity:0.6;
+  background-color: red
+}
 .poet {
   font-size: 40rpx;
     padding: 20rpx;
   margin-bottom: 20rpx;
+  font-family: "宋体"
 }
 .content {
   font-size: 35rpx;
       padding: 10rpx;
   margin-bottom: 10rpx;
-  font-family: "FangSong"
+  font-family: "楷体"
 }
-.note {
+.time{
+  font-size: 30rpx;
 }

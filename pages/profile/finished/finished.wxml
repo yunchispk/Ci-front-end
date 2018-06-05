@@ -1,2 +1,16 @@
 <!--pages/profile/finished/finished.wxml-->
-<text>pages/profile/finished/finished.wxml</text>
+<loading hidden="{{loadingHidden}}">
+        加载中...
+</loading>
+<swiper class="swiper" indicator-dots="true" circular="true" previous-margin="80rpx" next-margin="40rpx">
+  <swiper-item wx:for="{{results}}" wx:for-item="item" wx:for-index="index">
+  <view class="card" catchtap='rewrite' data-sn="{{item.sn}}"  style="background-image: url('{{imageData}}');">
+    <text class="title">{{item.rhythmic}}</text>
+    <text class="poet">{{item.user_name}}</text>
+    <view wx:for="{{list_write[index]}}" wx:for-item="item1">
+    <text class='content'>{{item1}}</text>
+    </view>
+    <text class="time">{{item.time}}</text>
+  </view>
+  </swiper-item>
+</swiper>

@@ -7,19 +7,22 @@ Page({
       author: '',         //词人
       paragraphs: {},     //词正文
       //note: '',           //注释
+      class_like:'button',
+      canItap: true
   },
 
   onLoad: function (options) {
-    this.getData();
-  },
-
-  //获取词详情 
-  getData: function () {
+    try{
+      var poetry_id = options.poetry_id
+      this.setData({url : 'https://www.ikjmls.cn/poetry/' + poetry_id})
+    }catch(error){
+      var iscreating_id = optins.iscreating_id
+      this.setData({ url: 'https://www.ikjmls.cn/iscreating_look/' + iscreating_id })
+    }
     const that = this
     var id = Math.floor(Math.random() * 21000);
-    var sn = Math.floor(Math.random() * 10)
     wx.request({
-      url: 'https://www.ikjmls.cn/image/bg' + sn,
+      url: 'https://www.ikjmls.cn/image/bg2',
       success: function (res) {
         var data = res.data
         var array = wx.base64ToArrayBuffer(res.data)
@@ -33,16 +36,23 @@ Page({
     })
     //wx.showNavigationBarLoading();
     wx.request({
-      url: app._server + '/poetry/' + id,
+      url: that.data.url,
       success: function (res) {
         //console.log('22222')
         console.log(res.data)
         var paragraphs_list = res.data.data[0].paragraphs.split('\', \'')
+        for (var i = 0; i < paragraphs_list.length; i++) {
+          paragraphs_list[i] = paragraphs_list[i].substr(0, paragraphs_list[i].length - 1)
+        }
+        console.log(paragraphs_list)
         that.setData({
           rhythmic: res.data.data[0].rhythmic,
           paragraphs: paragraphs_list,
           author: res.data.data[0].author,
-          sn: sn
+          sn: res.data.data[0].sn,
+          time: res.data.data[0].time,
+          class_like: "button",
+          canItap: true
         })
       },
       fail: function (res) {
@@ -52,18 +62,14 @@ Page({
       //   openid: app._user.openid,//
       // }),
     })
-    },
-
-/**
- * 用户点击右上角分享
- */
-onShareAppMessage: function () {
-  return {
-    title: list.title,
-    desc: list.content,
-    path: '/index/poetry_article/poetry_article?dataid=' + id
+  },
+  index: function(){
+    wx.switchTab({
+      url: '/pages/index/index',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   }
-}
-
 })
 

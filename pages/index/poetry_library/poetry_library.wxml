@@ -4,7 +4,7 @@
     <view id="Top" class="header">
 
       <view class="h-close">
-        <image src="../../imgs/ic_off.png"></image>
+        <!--<image src="../../imgs/ic_off.png"></image>-->
       </view>
     </view>
 
@@ -14,7 +14,7 @@
           {{item.alphabet}}
         </view>
         <view wx:for="{{item.datas}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells">
-          <view class="section-item-cell {{cellIndex != (item.datas.length-1) ? 'border-bottom':''}}" binfTap="binfKeyTap" hover-class="none">
+          <view class="section-item-cell {{cellIndex != (item.datas.length-1) ? 'border-bottom':''}}" catchtap="next" data-keyword="{{cell}}" hover-class="none">
             <text>{{cell}}</text>
           </view>
         </view>

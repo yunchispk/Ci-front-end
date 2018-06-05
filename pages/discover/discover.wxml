@@ -2,11 +2,15 @@
 <loading hidden="{{loadingHidden}}">
         加载中...
 </loading>
-
-<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-    <block wx:for="{{focusImages.list}}" wx:key="{{item}}">
-        <swiper-item>
-            <image src="{{item.pic}}" style="width:100%; height:100%;"></image>
-        </swiper-item>
-    </block>
+<swiper class="swiper" indicator-dots="true" circular="true" previous-margin="80rpx" next-margin="40rpx">
+  <swiper-item wx:for="{{results}}" wx:for-item="item" wx:for-index="index">
+  <view class="card" catchtap='rewrite' data-sn="{{item.sn}}"  style="background-image: url('{{imageData}}');">
+    <text class="title">{{item.rhythmic}}</text>
+    <text class="poet">{{item.user_name}}</text>
+    <view wx:for="{{list_write[index]}}" wx:for-item="item1">
+    <text class='content'>{{item1}}</text>
+    </view>
+    <text class="time">{{item.time}}</text>
+  </view>
+  </swiper-item>
 </swiper>

@@ -2,9 +2,10 @@
 <loading hidden="{{loadingHidden}}">
         加载中...
 </loading>
-<swiper class="swiper" indicator-dots="true" circular="true" previous-margin="80rpx" next-margin="40rpx">
+
+<swiper class="swiper" circular="true" previous-margin="80rpx" next-margin="40rpx">
   <swiper-item wx:for="{{results}}" wx:for-item="item" wx:for-index="index">
-  <view class="card"  style="background-image: url('{{imageData}}');">
+  <view class="card" catchtap='next' data-id="{{item.sn}}" style="background-image: url('{{imageData}}');">
     <text class="title">{{item.rhythmic}}</text>
     <text class="poet">{{item.author}}</text>
     <view wx:for="{{results_content[index]}}" wx:for-item="item1">

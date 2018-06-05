@@ -1,4 +1,15 @@
-<!--pages/index/poetry_rhythmic/poetry_rhythmic.wxml-->
-<view class="page">
-
-</view>
+<!--pages/profile/liked/liked.wxml-->
+<loading hidden="{{loadingHidden}}">
+        加载中...
+</loading>
+<swiper class="swiper" circular="true" previous-margin="80rpx" next-margin="40rpx">
+  <swiper-item wx:for="{{results}}" wx:for-item="item" wx:for-index="index">
+  <view class="card" catchtap='next' data-id="{{item.sn}}" style="background-image: url('{{imageData}}');">
+    <text class="title">{{item.rhythmic}}</text>
+    <text class="poet">{{item.author}}</text>
+    <view wx:for="{{results_content[index]}}" wx:for-item="item1">
+    <text class='content'>{{item1}}</text>
+    </view>
+  </view>
+  </swiper-item>
+</swiper>

@@ -1,8 +1,9 @@
 /* pages/profile/liked/liked.wxss */
 .swiper{
-  height: 90vh;
+  height: 100vh;
 }
 .card{
+  position: fixed;
   background-color:wheat;
   height: 90%;
   width: 90%;
@@ -10,4 +11,20 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+.title {
+  font-size: 50rpx;
+  font-family: "宋体"
+}
+.poet {
+  font-size: 40rpx;
+  font-family: "宋体"
+}
+.content {
+  font-size: 35rpx;
+  font-family: "楷体"
+}
+.zhanwei{
+    height: 30%;
+  width: 90%;
 }

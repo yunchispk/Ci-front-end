@@ -1,11 +1,13 @@
 <!--index.wxml-->
-
+<modal hidden="{{hidden}}" no-cancel="true" title="设置一个响亮的笔名！" confirm-text="就这个了" bindconfirm="confirm">
+<input type="text" class="weui-search-bar__input" placeholder="ennnn 叫什么好呢..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+</modal>
 <view class="page__bd">
   <view class="weui-search-bar">
     <view class="weui-search-bar__form">
       <view class="weui-search-bar__box">
         <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <input type="text" class="weui-search-bar__input" placeholder="作者/词牌名/某句词（短句）" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
         <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
           <icon type="clear" size="14"></icon>
         </view>
@@ -15,7 +17,7 @@
         <view class="weui-search-bar__text">搜索</view>
       </label>
     </view>
-    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消 </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" catchtap='next'>搜索 </view>
   </view>
 </view>
 
