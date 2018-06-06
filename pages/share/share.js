@@ -21,8 +21,9 @@ Page({
     }
     const that = this
     var id = Math.floor(Math.random() * 21000);
+    var sn = Math.floor(Math.random() * 42)
     wx.request({
-      url: 'https://www.ikjmls.cn/image/bg2',
+      url: 'https://www.ikjmls.cn/image/bg' + sn,
       success: function (res) {
         var data = res.data
         var array = wx.base64ToArrayBuffer(res.data)
@@ -53,6 +54,9 @@ Page({
           time: res.data.data[0].time,
           class_like: "button",
           canItap: true
+        })
+        wx.setNavigationBarTitle({
+          title: that.data.rhythmic
         })
       },
       fail: function (res) {

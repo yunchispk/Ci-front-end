@@ -92,10 +92,10 @@ Page({
   info: function(){
     wx.showModal({
       title: '关于',
-      content: '感谢使用我们的小程序哦！大学生不成熟作品，多多包涵~',
+      content: '感谢使用我们的小程序哦！有不合理的地方请多多包涵~',
       showCancel: true,
       cancelText: '我真帅',
-      cancelColor: 'blue',
+      cancelColor: '',
       confirmText: '我最美',
       confirmColor: '',
       success: function(res) {},

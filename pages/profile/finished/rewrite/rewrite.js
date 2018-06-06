@@ -14,8 +14,9 @@ Page({
   },
   onLoad: function(options){
     const that = this
+    var sn = Math.floor(Math.random() * 42)
     wx.request({
-      url: 'https://www.ikjmls.cn/image/cz',
+      url: 'https://www.ikjmls.cn/image/bg' + sn,
       success: function (res) {
         var data = res.data
         var array = wx.base64ToArrayBuffer(res.data)
@@ -154,6 +155,16 @@ Page({
           success: function (res) {
             that.setData({
               class_like: 'green_button'
+            })
+            wx.showToast({
+              title: '保存成功~',
+              icon: '',
+              image: '',
+              duration: 1000,
+              mask: true,
+              success: function(res) {},
+              fail: function(res) {},
+              complete: function(res) {},
             })
           },
           fail: function (res) { },

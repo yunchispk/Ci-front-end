@@ -71,8 +71,9 @@ Page({
   },
   onLoad: function () {
     const that = this
+    var sn = Math.floor(Math.random() * 42)
     wx.request({
-      url: 'https://www.ikjmls.cn/image/bg20',
+      url: 'https://www.ikjmls.cn/image/bg' + sn,
       success: function (res) {
         var data = res.data
         var array = wx.base64ToArrayBuffer(res.data)

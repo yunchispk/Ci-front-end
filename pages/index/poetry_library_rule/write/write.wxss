@@ -50,11 +50,14 @@ font-family: "FangSong"
 .pzback{color: blue;}
 
 .inputView{
-    border:  1px solid red;
-    border-radius: 10px;
+    border:  1px solid green;
+    /*边界角的弧度*/
+    border-radius: 30px;
     margin-left: 15px;
     margin-right: 15px;
     margin-top: 15px;
+    padding-left: 10px;
+    height: 44px;
 }
 .button{
   opacity:0.7
