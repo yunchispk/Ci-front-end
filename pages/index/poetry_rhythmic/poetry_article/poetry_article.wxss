@@ -1,42 +1,49 @@
-/*pages/index/poetry_article/poetry_article.wxss*/
-.all{
+/*pages/index/poetry_rhythmic/poetry_article/poetry_article.wxss*/
+
+.all {
   justify-content: center;
   position: fixed;
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
-
 }
+
 .title {
   font-size: 50rpx;
   padding: 20rpx;
   margin-bottom: 20rpx;
-  font-family: "宋体"
+  font-family: "宋体";
 }
-.button{
-  opacity:0.6
-}
-.red_button{
-  opacity:0.6;
-  background-color: red
-}
+
 .poet {
   font-size: 40rpx;
-    padding: 20rpx;
+  padding: 20rpx;
   margin-bottom: 20rpx;
-  font-family: "宋体"
+  font-family: "宋体";
 }
+
 .content {
   font-size: 35rpx;
-      padding: 10rpx;
+  padding: 10rpx;
   margin-bottom: 10rpx;
-  font-family: "楷体"
+  font-family: "楷体";
 }
+
 .article {
+  margin-top: 10%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.button {
+  opacity: 0.6;
+}
+
+.red_button {
+  opacity: 0.6;
+  background-color: red;
 }

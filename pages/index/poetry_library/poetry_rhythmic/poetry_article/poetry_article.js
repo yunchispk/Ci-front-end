@@ -1,4 +1,4 @@
-// pages/index/poetry_article/poetry_article.js
+// pages/index/poetry_library/poetry_rhythmic/poetry_article/poetry_article.js
 var app = getApp();
 Page({
 
