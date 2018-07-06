@@ -1,0 +1,14 @@
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>
+<view class="all" style="background-image: url('{{imageData}}');">
+  <input class="inputView" disabled='true' placeholder="标题" bindinput="bindKeyInput" focus="{{focus}}" value="{{rhythmic}}" />
+  <textarea value='{{paragraphs}}' disabled='true' class="textareaView" placeholder="正文" bindinput="bindKeyInput1" focus="{{focus}}" value="{{paragraphs1}}" />
+  <textarea class="textareaView"  bindinput="bindKeyInput2" placeholder="这部分你来写哦" value="{{paragraphs2}}"/>
+  <button class="{{class_like}}" catchtap='save'>保存！</button>
+  <button wx:if="{{open_ok}}" class="button" catchtap='open'>公开！</button>
+    <button wx:else class="button" catchtap='disopen'>隐藏！</button>
+    <modal hidden="{{hidden}}" title="确定要公开吗？" confirm-text="公开" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    公开后将会被陌生人看到哦！
+</modal>
+</view>

@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<modal hidden="{{hidden}}" no-cancel="true" title="设置一个响亮的笔名！" confirm-text="就这个了" bindconfirm="confirm">
-  <input type="text" class="weui-search-bar__input" placeholder="ennnn 叫什么好呢..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+<modal hidden="{{hidden}}" no-cancel="true" title="设置一个响亮的笔名！(最多6位）" confirm-text="就这个了" bindconfirm="confirm">
+  <input type="text"  maxlength='6' class="weui-search-bar__input" placeholder="ennnn 叫什么好呢..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
 </modal>
 
 <view style="width: 100%; height: 100%">
@@ -39,8 +39,8 @@
       </view>
     </view>
   </view>
-  <image font-size="0" class="one2 mmm {{ one_one1 }}" src="../../images/3.jpg" catchtap='to1'></image>
-  <image font-size="0" class="one3 mmm {{ one_one1 }}" src="../../images/4.jpg" catchtap='to2'></image>
-  <image font-size="0" class="one4 bbb {{ one_one1 }}" src="../../images/7.jpg" catchtap='to3'></image>
-
+  <image font-size="0" class="one2 mmm {{ one_one1 }}" src="../../images/1.jpg" catchtap='to1'></image>
+  <image font-size="0" class="one3 mmm {{ one_one1 }}" src="../../images/2.jpg" catchtap='to2'></image>
+  <image font-size="0" class="one4 mmm {{ one_one1 }}" src="../../images/3.jpg" catchtap='to3'></image>
+  <image font-size="0" class="one5 mmm {{ one_one1 }}" src="../../images/4.jpg" catchtap='to4'></image>
 </view>

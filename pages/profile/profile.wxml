@@ -1,20 +1,25 @@
 <!--profile.wxml-->
 <!--index.wxml-->
-<modal hidden="{{hidden}}" no-cancel="true" title="换一个响亮的笔名！" confirm-text="就它了！" bindconfirm="rename">
-  <input type="text" class="weui-search-bar__input" placeholder="之前作品的笔名仍会保留哦" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+<modal hidden="{{hidden}}" no-cancel="true" title="换一个响亮的笔名！(最多6位）" confirm-text="就它了！" bindconfirm="rename">
+  <input type="text" maxlength='6' class="weui-search-bar__input" placeholder="之前作品的笔名仍会保留哦" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
 </modal>
 
 <view style="width: 100%; height: 100%">
   <view class="one-one {{ one_one }}" style="background-image: url('{{imageData}}');">
     <view>
-    <view class="sss">
-    <text decode="{{true}} " space="{{true}} ">&nbsp;1</text>
-    </view>
-    <view class="sss">
-    <text decode="{{true}} " space="{{true}} ">&nbsp;</text>
-    </view>
-      <text class="userinfo" style="display:flex;flex-wrap:wrap;justify-content:center;" decode="{{true}} " space="{{true}} ">&nbsp;{{name}}&nbsp;</text>
+      <view class="sss">
+        <text decode="{{true}} " space="{{true}} ">&nbsp;</text>
+      </view>
+      <view class="sss">
+        <text decode="{{true}} " space="{{true}} ">&nbsp;</text>
+      </view>
+      <view class="sss">
+        <text decode="{{true}} " space="{{true}} ">&nbsp;</text>
+      </view>
+      <text decode="{{true}} " space="{{true}} ">&nbsp;</text>
+      <text class="userinfo" style="display:flex;flex-wrap:wrap;justify-content:center;" decode="{{true}} " space="{{true}} ">{{name}}</text>
       <button class="clickEncryptBtn " style='' bindtap="toast"> 重命名</button>
+      <image class='img' src='/images/index/icon_name.png'></image>
     </view>
   </view>
   <image font-size="0 " class="one6 mmmm {{ one_one1 }} " src="../../images/8.jpg " catchtap='to1'></image>

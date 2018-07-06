@@ -27,8 +27,6 @@
 }
 .content {
   font-size: 50rpx;
-  padding: 15rpx;
-  margin-bottom: 15rpx;
   font-family: "楷体"
 }
 .page-section{

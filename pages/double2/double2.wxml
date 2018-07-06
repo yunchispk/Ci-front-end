@@ -1,0 +1,13 @@
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>
+<modal hidden="{{hidden}}" no-cancel="true" title="设置一个响亮的笔名！(最多6位）" confirm-text="就这个了" bindconfirm="confirm">
+  <input type="text" maxlength='6' class="weui-search-bar__input" placeholder="ennnn 叫什么好呢..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+</modal>
+<view class="all" style="background-image: url('{{imageData}}');">
+  <input class="inputView" disabled='true' placeholder="标题" bindinput="bindKeyInput" focus="{{focus}}" value="{{rhythmic}}" />
+  <textarea class="textareaView" disabled='true' placeholder="正文" bindinput="bindKeyInput1" focus="{{focus}}" value="{{paragraphs1}}" />
+  <textarea class="textareaView" bindinput="bindKeyInput2" placeholder="这部分是你写哦" />
+  <button class="{{class_like}}" catchtap='save'>保存</button>
+  <button class="button" catchtap='index'>我也要玩！</button>
+</view>

@@ -1,17 +1,18 @@
 <!--pages/index/poetry_article/poetry_article.wxml-->
 <view class="all" style="background-image: url('{{imageData}}');">
-<scroll-view scroll-y="true" style="height: 500px; width: 350prx">
-  <view class="article">
-  <view class="title">
-    <text>{{rhythmic}}</text>
-  </view>
-  <view class="poet">
-    <text>{{author}}</text>
-  </view>
-  <view class="content" wx:for="{{paragraphs}}" wx:for-item="i">
-    <text>{{i}}</text>
-  </view>
-  </view>
+  <button catchtap='a' open-type='share' class='share' data-sn="{{item.sn}}" style="background-image: url('{{imageshare}}');"></button>
+  <scroll-view scroll-y="true" style="height: 500px; width: 350prx">
+    <view class="article">
+      <view class="title">
+        <text>{{rhythmic}}</text>
+      </view>
+      <view class="poet">
+        <text>{{author}}</text>
+      </view>
+      <view class="content" wx:for="{{paragraphs}}" wx:for-item="i">
+        <text>{{i}}</text>
+      </view>
+    </view>
   </scroll-view>
 
 </view>

@@ -1,0 +1,27 @@
+<!--discover.wxml-->
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>
+<image class='space'></image>
+<swiper class="swiper" indicator-dots="true" circular="true" previous-margin="80rpx" next-margin="40rpx">
+  <swiper-item wx:for="{{results}}" wx:for-item="item" wx:for-index="index">
+    <view class="card" style="background-image: url('{{imageData}}');">
+      <text class='zan_num'>{{item.like_num}}</text>
+      <view>
+        <text class="title">{{item.rhythmic}}</text>
+        <image wx:if="{{item.guanlianid}}" class='img' src='/images/index/icon_zan.png' bindtap='dianzan' data-index='{{item.sn}}'></image>
+        <image wx:else class='img' src='/images/index/icon_zaned.png'></image>
+        <button open-type='share' class='share' data-index="{{item.sn}}" style="background-image: url('{{imageshare}}');"></button>
+      </view>
+      <text class="poet">{{item.user_name}}</text>
+      <view wx:for="{{list_write[index]}}" wx:for-item="item1">
+        <text class='content'>{{item1}}</text>
+      </view>
+      <text class="time">{{item.time}}</text>
+      <image class='space'></image>
+      <button class="button1" bindtap="more" data-index='{{item.sn}}'>查看他人妙对</button>
+      <button class="button2" bindtap="create" data-index='{{item.sn}}'>我要对词</button>
+    </view>
+
+  </swiper-item>
+</swiper>

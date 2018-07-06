@@ -1,7 +1,14 @@
 {
+
   "pages": [
     "pages/index/index",
+    "pages/double2/double2",
+    "pages/in_double2/double2",
+    "pages/double/double",
+    "pages/redouble/double",
+    "pages/redouble2/double2",
     "pages/discover/discover",
+    "pages/discover2/discover",
     "pages/profile/profile",
     "pages/index/poetry_library/poetry_library",
     "pages/index/poetry_article/poetry_article",
@@ -15,19 +22,21 @@
     "pages/index/poetry_rhythmic/poetry_rhythmic",
     "pages/index/poetry_rhythmic/poetry_article/poetry_article",
     "pages/share/share",
-    "pages/profile/liked/poetry_article/poetry_article"
+    "pages/profile/liked/poetry_article/poetry_article",
+    "pages/find_double/find_double",
+    "pages/find/find"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#7acfa6",
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "Ci",
-    "backgroundColor": "#7acfa6",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "我与词",
+    "backgroundColor": "#eee",
     "backgroundTextStyle": "light"
   },
   "tabBar": {
-    "color": "#7f848a",
-    "selectedColor": "#7acfa6",
-    "backgroundColor": "#f7f6fb",
+    "color": "#aaa",
+    "selectedColor": "#222",
+    "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -36,7 +45,7 @@
         "selectedIconPath": "images/index/icon_tabbar_homeup@active.png"
       },
       {
-        "pagePath": "pages/discover/discover",
+        "pagePath": "pages/find/find",
         "text": "发现",
         "iconPath": "images/index/icon_tabbar_discoveryup.png",
         "selectedIconPath": "images/index/icon_tabbar_discoveryup@active.png"

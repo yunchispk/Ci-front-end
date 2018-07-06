@@ -1,0 +1,7 @@
+<!--pages/find/find.wxml-->
+<view class='all'>
+  <image font-size="0" class="one2"></image>
+  <image font-size="0" class="one3" src="../../images/7.jpg" catchtap='to1'></image>
+  <image font-size="0" class="one2"></image>
+  <image font-size="0" class="one3" src="../../images/11.jpg" catchtap='to2'></image>
+</view>

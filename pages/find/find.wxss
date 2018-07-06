@@ -1,0 +1,21 @@
+/* pages/find/find.wxss */
+
+.all {
+ position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.one2 {
+    width: 10%;
+  height: 12%;
+  top: 233;
+  left: 0;
+}
+
+.one3 {
+    width: 100%;
+  height: 30%;
+  top: 233;
+  left: 188;
+}

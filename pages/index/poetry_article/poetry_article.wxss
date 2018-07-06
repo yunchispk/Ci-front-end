@@ -8,6 +8,17 @@
   flex-direction: column; 
   align-items: center;
 }
+.share{
+  height:30px;
+  width:30px;
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  bottom: 0;
+  background-size: 30px 30px;
+  background-repeat:no-repeat;
+  border:0;
+}
 .title {
   font-size: 50rpx;
   padding: 20rpx;

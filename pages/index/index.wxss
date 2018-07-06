@@ -87,19 +87,19 @@ page {
   top: 433;
   left: 0;
 }
+.one5{
+  float:left;
+  top: 433;
+  left: 188;
+}
 .mmm{
       width: 50%;
-    height: 30%;
-    opacity: 0;
-}
-.bbb{
-      width: 100%;
     height: 31%;
     opacity: 0;
 }
   .one-one {
     width: 100%;
-    height: 39%;
+    height: 38%;
     opacity: 0;
   }
   .one-two {

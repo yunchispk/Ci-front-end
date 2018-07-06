@@ -150,4 +150,9 @@ Page({
       url: '/pages/index/poetry_library_rule/poetry_library_rule',
     })
   },
+  to4: function () {
+    wx.navigateTo({
+      url: '/pages/double/double',
+    })
+  },
 });

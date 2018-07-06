@@ -5,13 +5,38 @@
   align-items:center;
   margin-top: 60rpx;
 }
-.userinfo {
-  font-size: 62rpx;
-  color: white
+.img {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 230rpx;
+  left: 20rpx;
 }
 
+.userinfo {
+  font-size: 62rpx;
+  color: white;
+    position: absolute;
+  left: 120rpx;
+  top: 230rpx;
+}
+
+.clickEncryptBtn{  
+  border-radius: 3px;  
+  margin:40px auto;  
+  padding-top:2px;  
+  font-size:14px;  
+  color:black;  
+  overflow:hidden;  
+  width: 25%;
+  opacity: 0.6;
+  position: absolute;
+  right: 30rpx;
+  top: 164rpx;
+}  
+
 .sss{
-  font-size: 28rpx;
+  font-size: 26rpx;
 }
 
 .userinfo-avatar {
@@ -30,16 +55,6 @@
   margin-top: 200px;
 }
 
-.clickEncryptBtn{  
-  border-radius: 3px;  
-  margin:40px auto;  
-  padding-top:2px;  
-  font-size:14px;  
-  color:black;  
-  overflow:hidden;  
-  width: 25%;
-  opacity: 0.6
-}  
 
 /*index.wxss*/
 
@@ -131,8 +146,8 @@ page {
   left: 0;
 }
 .mmmm{
-      width: 50%;
-    height: 57%;
+      width: 100%;
+    height: 29%;
     opacity: 0;
 }
 .bbbb{
@@ -142,8 +157,7 @@ page {
 }
   .one-one {
     width: 100%;
-    height: 30%;
-    opacity: 0;
+    height: 28%;
   }
   .one-two {
     position: absolute;

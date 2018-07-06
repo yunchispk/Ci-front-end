@@ -1,0 +1,12 @@
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>
+<view class="all" style="background-image: url('{{imageData}}');">
+  <input class="inputView" placeholder="标题" bindinput="bindKeyInput" focus="{{focus}}" value="{{input_value}}" />
+  <textarea class="textareaView" placeholder="正文" bindinput="bindKeyInput1" focus="{{focus}}" value="{{input_value}}" />
+  <textarea class="textareaView" disabled='true' bindinput="bindKeyInput2" placeholder="这部分是朋友写哦" />
+  <button class="{{class_like}}" catchtap='save'>保存</button>
+  <button wx:if="{{ok_1}}" class="button" catchtap='share'>请朋友来对词！</button>
+  <button wx:else class="button" open-type="share">请朋友来对词！</button>
+
+</view>

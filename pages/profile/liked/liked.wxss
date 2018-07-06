@@ -1,6 +1,28 @@
 /* pages/profile/liked/liked.wxss */
 .swiper{
-  height: 100vh;
+  height: 95vh;
+}
+.delete{
+  height:30px;
+  width:30px;
+  position: absolute;
+  top: 90rpx;
+  right: 30rpx;
+}
+.share{
+  height:30px;
+  width:30px;
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  bottom: 0;
+  background-size: 30px 30px;
+  background-repeat:no-repeat;
+  border:0;
+}
+.space{
+    height:10px;
+  width:10px;
 }
 .card{
   position: fixed;

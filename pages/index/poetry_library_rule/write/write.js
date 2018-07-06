@@ -148,7 +148,7 @@ Page({
           console.log(str_write)
           str_write = str_write + that.data.list_write[i].join("") + "。"
         }
-        var url = 'https://www.ikjmls.cn/user/' + app.globalData.openid + '/user_name/' + app.globalData.name + '/iscreating/' + str_write + '/rhythmic/' + that.data.rhythmic
+        var url = 'https://www.ikjmls.cn/user/' + app.globalData.openid + '/user_name/' + app.globalData.name + '/iscreating/' + str_write + '/rhythmic/' + that.data.rhythmic + '/guanlianid/1'
         console.log(url)
       wx:wx.request({
         url: url,

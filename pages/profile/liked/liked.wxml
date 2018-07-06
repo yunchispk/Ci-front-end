@@ -1,15 +1,18 @@
 <!--pages/profile/liked/liked.wxml-->
 <loading hidden="{{loadingHidden}}">
-        加载中...
+  加载中...
 </loading>
+<image class='space'></image>
 <swiper class="swiper" indicator-dots="true" circular="true" previous-margin="80rpx" next-margin="40rpx">
   <swiper-item wx:for="{{results}}" wx:for-item="item" wx:for-index="index">
-  <view class="card"  style="background-image: url('{{imageData}}');" catchtap='next' data-sn='{{item.sn}}'>
-    <text class="title">{{item.rhythmic}}</text>
-    <text class="poet">{{item.author}}</text>
-    <view wx:for="{{results_content[index]}}" wx:for-item="item1">
-    <text class='content'>{{item1}}</text>
+    <view class="card" style="background-image: url('{{imageData}}');" catchtap='next' data-sn='{{item.sn}}'>
+        <image class='delete' src='/images/index/icon_delete.png' catchtap='sure' data-sn="{{item.sn}}"></image>
+        <button catchtap='a' open-type='share' class='share' data-sn="{{item.sn}}" style="background-image: url('{{imageshare}}');"></button>
+      <text class="title">{{item.rhythmic}}</text>
+      <text class="poet">{{item.author}}</text>
+      <view wx:for="{{results_content[index]}}" wx:for-item="item1">
+        <text class='content'>{{item1}}</text>
+      </view>
     </view>
-  </view>
   </swiper-item>
 </swiper>

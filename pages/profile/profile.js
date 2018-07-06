@@ -60,6 +60,13 @@ Page({
         }
       }
     })
+  },
+  onShow: function(){
+    const that = this
+    that.setData({
+      one_one: 'animated fadeIn',
+      one_one1: 'animated zoomIn',
+    });
     setTimeout(function () {
       if (app.globalData.get_user) {
         console.log(app.globalData.get_user)
@@ -73,13 +80,6 @@ Page({
       }
     }, 1000)
   },
-  onShow: function(){
-    const that = this
-    that.setData({
-      one_one: 'animated fadeIn',
-      one_one1: 'animated zoomIn',
-    });
-  },
   rename: function (e) {
     console.log(this.data.inputVal)
     if (this.data.inputVal != ''){
@@ -92,6 +92,7 @@ Page({
           name: that.data.inputVal,
           hidden: true
         })
+        app.globalData.name = that.data.inputVal
         wx.setNavigationBarTitle({
           title: that.data.name
         })

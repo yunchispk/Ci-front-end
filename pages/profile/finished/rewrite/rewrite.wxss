@@ -21,8 +21,6 @@
 }
 .content {
   font-size: 50rpx;
-  padding: 15rpx;
-  margin-bottom: 15rpx;
   font-family: "楷体"
 }
 .page-section{
@@ -36,7 +34,8 @@
 .bc_green {width:60rpx; height: 60rpx; font-size: x-large;
 font-family: "FangSong"
 }
-.back1{background-color: yellow}
+.back2{ border-bottom: 2px solid black}
+.back1{background-color: wheat}
 .pzback0{color: red;}
 .pzback1{color: green;}
 .pzback-{color: blue;}
