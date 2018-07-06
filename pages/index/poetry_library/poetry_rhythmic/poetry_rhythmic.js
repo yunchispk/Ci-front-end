@@ -9,9 +9,6 @@ Page({
     loadingHidden: false
   },
   onShow: function(){
-    this.setData({
-      loadingHidden: false
-    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -33,6 +30,11 @@ Page({
           that.setData({
             results: res.data.data,
           })
+          setTimeout(function () {
+            that.setData({
+            loadingHidden: true
+            })
+          }, 1000)
           var list = {}
           var list1 = {}
           console.log(res.data.data.length)

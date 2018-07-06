@@ -1,4 +1,4 @@
-<!--pages/index/poetry_rhythmic/poetry_article/poetry_article.wxml-->
+<!--pages/index/poetry_article/poetry_article.wxml-->
 <view class="all" style="background-image: url('{{imageData}}');">
 <scroll-view scroll-y="true" style="height: 500px; width: 350prx">
   <view class="article">

@@ -4,7 +4,7 @@
     <view id="Top" class="header">
 
       <view class="h-close">
-        <image src="../../imgs/ic_off.png"></image>
+        <image src=""></image>
       </view>
     </view>
 

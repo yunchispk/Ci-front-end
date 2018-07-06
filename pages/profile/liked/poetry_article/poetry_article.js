@@ -13,7 +13,7 @@ Page({
 
   onLoad: function (options) {
     this.setData({
-      sn: options.id
+      sn: options.sn
     })
     this.getData();
   },

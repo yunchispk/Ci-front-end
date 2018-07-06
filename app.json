@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/index/poetry_article/poetry_article",
     "pages/index/index",
     "pages/discover/discover",
     "pages/profile/profile",
     "pages/index/poetry_library/poetry_library",
+    "pages/index/poetry_article/poetry_article",
     "pages/index/poetry_library_rule/poetry_library_rule",
     "pages/index/poetry_library_rule/write/write",
     "pages/profile/liked/liked",
@@ -14,7 +14,8 @@
     "pages/index/poetry_library/poetry_rhythmic/poetry_article/poetry_article",
     "pages/index/poetry_rhythmic/poetry_rhythmic",
     "pages/index/poetry_rhythmic/poetry_article/poetry_article",
-    "pages/share/share"
+    "pages/share/share",
+    "pages/profile/liked/poetry_article/poetry_article"
   ],
   "window": {
     "navigationBarBackgroundColor": "#7acfa6",

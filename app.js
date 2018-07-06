@@ -1,6 +1,6 @@
 //app.js
 App({
-  version: 'v0.0.0', //版本号
+  version: 'v3.0.0', //版本号
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -21,6 +21,7 @@ App({
             that.globalData.name = res.data.name
             that.globalData.like_tosat = res.data.ok
             console.log(that.globalData.openid)
+            
           },
           fail: function (res) { },
           complete: function (res) { },

@@ -12,6 +12,11 @@ Page({
     inputVal: '',
     fx: false
   },
+  toast: function () {
+    this.setData({
+      hidden: false
+    })
+  },
   showInput: function () {
     this.setData({
       inputShowed: true
@@ -42,6 +47,19 @@ Page({
   onLoad: function () {
     console.log(app.globalData.openid)
     const that = this
+    wx.request({
+      url: 'https://www.ikjmls.cn/image/user',
+      success: function (res) {
+        var data = res.data
+        var array = wx.base64ToArrayBuffer(res.data)
+        var base64 = wx.arrayBufferToBase64(array)
+        if (res.statusCode == 200) {
+          that.setData({
+            imageData: 'data:image/jpeg;base64,' + base64,  // data 为接口返回的base64字符串  
+          })
+        }
+      }
+    })
     setTimeout(function () {
       if (app.globalData.get_user) {
         console.log(app.globalData.get_user)
@@ -55,10 +73,12 @@ Page({
       }
     }, 1000)
   },
-  toast: function(){
-    this.setData({
-      hidden: false
-    })
+  onShow: function(){
+    const that = this
+    that.setData({
+      one_one: 'animated fadeIn',
+      one_one1: 'animated zoomIn',
+    });
   },
   rename: function (e) {
     console.log(this.data.inputVal)
@@ -102,6 +122,17 @@ Page({
       fail: function(res) {},
       complete: function(res) {},
     })
-  }
+  },
+
+  to1: function () {
+    wx.navigateTo({
+      url: '/pages/profile/finished/finished',
+    })
+  },
+  to2: function () {
+    wx.navigateTo({
+      url: '/pages/profile/liked/liked',
+    })
+  },
 
 })

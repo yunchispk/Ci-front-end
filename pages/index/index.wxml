@@ -1,55 +1,46 @@
 <!--index.wxml-->
 <modal hidden="{{hidden}}" no-cancel="true" title="设置一个响亮的笔名！" confirm-text="就这个了" bindconfirm="confirm">
-<input type="text" class="weui-search-bar__input" placeholder="ennnn 叫什么好呢..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+  <input type="text" class="weui-search-bar__input" placeholder="ennnn 叫什么好呢..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
 </modal>
-<view class="page__bd">
-  <view class="weui-search-bar">
-    <view class="weui-search-bar__form">
-      <view class="weui-search-bar__box">
-        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-        <input type="text" class="weui-search-bar__input" placeholder="作者/词牌名/某句词（短句）" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
-        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-          <icon type="clear" size="14"></icon>
-        </view>
-      </view>
-      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
-        <icon class="weui-icon-search" type="search" size="14"></icon>
-        <view class="weui-search-bar__text">搜索</view>
-      </label>
+
+<view style="width: 100%; height: 100%">
+  <view class="one-one {{ one_one }}" style="background-image: url('{{imageData}}');">
+    <view>
+      <text decode="{{true}}" space="{{true}}">&nbsp;</text>
     </view>
-    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" catchtap='next'>搜索 </view>
+    <view>
+      <text decode="{{true}}" space="{{true}}">&nbsp;</text>
+    </view>
+    <view>
+      <text decode="{{true}}" space="{{true}}">&nbsp;</text>
+    </view>
+    <view>
+      <text decode="{{true}}" space="{{true}}">&nbsp;</text>
+    </view>
+    <view>
+      <text decode="{{true}}" space="{{true}}">&nbsp;</text>
+    </view>
+    <view style="display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;">
+      <view class="weui-search-bar" style='position: relative;width: 80%;border-radius: 22px;'>
+        <view class="weui-search-bar__form">
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="作者/词牌名/某句词（短句）" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+              <icon type="clear" size="14"></icon>
+            </view>
+          </view>
+          <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+          </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" catchtap='next'>搜索 </view>
+      </view>
+    </view>
   </view>
-</view>
+  <image font-size="0" class="one2 mmm {{ one_one1 }}" src="../../images/3.jpg" catchtap='to1'></image>
+  <image font-size="0" class="one3 mmm {{ one_one1 }}" src="../../images/4.jpg" catchtap='to2'></image>
+  <image font-size="0" class="one4 bbb {{ one_one1 }}" src="../../images/7.jpg" catchtap='to3'></image>
 
-
-<view class="body">
-  <!--设置轮换banner-->
-  <view>
-    <swiper indicator-dots='ture' autoplay='ture' interval='5000' duration='1000'>
-      <!--
-      <block wx:for="{{imgUrls}}">
-        <swiper-item>
-          <image src="{{item}}" class="pic"/>
-        </swiper-item>
-      </block>
-      -->
-    </swiper>
-  </view>
-</view>
-
-<view class="page_bd">
-  <view class="weui-cells weui-cells_after-title">
-    <navigator url="../index/poetry_article/poetry_article" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-      <view class="weui-cell__bd">随机一首词</view>
-      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="../index/poetry_library/poetry_library" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-      <view class="weui-cell__bd">所有词牌</view>
-      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="../index/poetry_library_rule/poetry_library_rule" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-      <view class="weui-cell__bd">写一首</view>
-      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-  </view>
 </view>

@@ -19,8 +19,9 @@ Page({
       wx.setNavigationBarTitle({
         title: keyword + '的结果'
       })
+      var sn = Math.floor(Math.random() * 42)
       wx.request({
-        url: 'https://www.ikjmls.cn/image/bg20',
+        url: 'https://www.ikjmls.cn/image/bg' + sn,
         success: function (res) {
           var data = res.data
           var array = wx.base64ToArrayBuffer(res.data)
@@ -51,6 +52,11 @@ Page({
           that.setData({
             results_content: list
           })
+          setTimeout(function () {
+            that.setData({
+              loadingHidden: true
+            })
+          }, 1000)
         }else{
           wx.showModal({
             title: '温馨提示~',
@@ -77,9 +83,6 @@ Page({
     }
   },
   onShow: function(){
-    this.setData({
-      loadingHidden: false
-    })
   },
   next: function (e) {
     var id = e.currentTarget.dataset.id;

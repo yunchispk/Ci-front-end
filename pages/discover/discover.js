@@ -39,6 +39,13 @@ Page({
     })
     
   },
+  onHide: function(){
+    this.setData({
+      results: {},
+      list_write: {},
+      loadingHidden: true
+    })
+  },
   onLoad: function () {
     const that = this
     wx.request({

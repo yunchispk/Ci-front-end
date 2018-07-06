@@ -13,8 +13,9 @@ Page({
   },
   onLoad: function(options){
     const that = this
+    var sn = Math.floor(Math.random() * 42)
     wx.request({
-      url: 'https://www.ikjmls.cn/image/cz',
+      url: 'https://www.ikjmls.cn/image/bg' + sn,
       success: function (res) {
         var data = res.data
         var array = wx.base64ToArrayBuffer(res.data)
@@ -45,7 +46,7 @@ Page({
     })
   },
   onShow: function(){
-    that.setData({
+    this.setData({
       loadingHidden: false
     })
   },
@@ -155,6 +156,16 @@ Page({
           that.setData({
             sn: res.data.sn
           })
+          wx.showToast({
+            title: '保存成功~',
+            icon: '',
+            image: '',
+            duration: 1000,
+            mask: true,
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
         },
         fail: function(res) {},
         complete: function(res) {},
@@ -169,6 +180,16 @@ Page({
         wx: wx.request({
           url: url,
           success: function (res) {
+            wx.showToast({
+              title: '保存成功~',
+              icon: '',
+              image: '',
+              duration: 1000,
+              mask: true,
+              success: function (res) { },
+              fail: function (res) { },
+              complete: function (res) { },
+            })
           },
           fail: function (res) { },
           complete: function (res) { },

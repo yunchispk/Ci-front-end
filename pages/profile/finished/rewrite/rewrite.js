@@ -269,10 +269,12 @@ Page({
     })
   },
     onShareAppMessage: function () {
+      console.log(this.data.sn)
+      const that = this
       return {
         title: app.globalData.name + "的创作！",
         desc: app.globalData.name + "又有新作！快来围观！",
-        path: '/pages/share/share?iscreating_id=' + this.data.sn
+        path: '/pages/share/share?iscreating_id=' + that.data.sn
       }
   }
 })
